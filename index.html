@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Program to convert binary number to decimal number</title>
+	<style>
+		.row {
+			display: flex;
+		}
+
+		.column {
+			float: left;
+		}
+
+		.left {
+			width: 25%;
+			margin: 5px;
+			border: 0.5px solid black;
+			padding: 10px;
+		}
+
+		.right {
+			width: 75%;
+			margin: 5px;
+			border: 0.5px solid black;
+			padding: 10px;
+		}
+
+		.footer {
+			background-color: #404040;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+
+<body style="background-color: #ffffe6;font-family: Arial, Helvetica, sans-serif;">
+	<div class="row">
+		<div class="column left">
+			<header>
+				<h1 style="font-size: 30px;margin-top: 50px;padding-left: 15px;color: green;">Recommended Articles:</h1>
+			</header><br>
+			<hr>
+			<nav>
+				<ul style="list-style: none;padding-left: 0;margin: 10px;">
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to binary
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to Hexadecimal
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Recursive program for binary to
+							decimal</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Binary to decimal and vice versa
+							Python</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to binary
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to Hexadecimal
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Recursive program for binary to
+							decimal</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Binary to decimal and vice versa
+							Python</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to binary
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to Hexadecimal
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Recursive program for binary to
+							decimal</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Binary to decimal and vice versa
+							Python</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to binary
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Program for decimal to Hexadecimal
+							conversion</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Recursive program for binary to
+							decimal</a></li>
+					<hr>
+					<li style="font-size: 30px;padding:10px;"><a href="/html/">Binary to decimal and vice versa
+							Python</a></li>
+					<hr>
+				</ul>
+			</nav>
+		</div>
+		<div class="column right">
+			<section>
+				<div style="width:100%;margin: auto;">
+					<header>
+						<h1 style="font-size: 40px;color: green;">Program to convert binary number to decimal number
+						</h1>
+					</header>
+					<br>
+					<hr><br>
+					<article>
+						<h1 style="font-size: 20px;">Given a binary number as input, we need to write a program to
+							convert the given binary number into an equivalent decimal number.</h1>
+						<p style="font-size: 18px;">The idea is to extract the digits of a given binary number starting
+							from right most digit and keep a variable dec_value. At the time of extracting digits from
+							the binary number, multiply the digit with the proper base (Power of 2) and add it to the
+							variable dec_value. At the end, the variable dec_value will store the required decimal
+							number.
+							For Example:
+							If the binary number is 111.
+							dec_value = 1*(2^2) + 1*(2^1) + 1*(2^0) = 7
+
+							The below diagram explains how to convert ( 1010 ) to equivalent decimal value: </p>
+						<div style="text-align: center;"><img style="width: 50%;height: 300px;margin: auto;"
+								src="binary2decimal.png"></div>
+
+					</article>
+					<header>
+						<h1 style="font-size: 25px;color: green;">Below is the implementation of above idea :</h1>
+					</header>
+					<header>
+						<h1 style="font-size: 21px;color: green;">C++ Code:</h1>
+					</header>
+					<br>
+					<pre>
+	<code style="font-size: 15px;" >
+			// C++ program to convert binary to decimal
+			#include <iostream>
+			using namespace std;
+
+			// Function to convert binary to decimal
+			int binaryToDecimal(int n)
+			{
+				int num = n;
+				int dec_value = 0;
+
+				// Initializing base value to 1, i.e 2^0
+				int base = 1;
+
+				int temp = num;
+				while (temp) {
+					int last_digit = temp % 10;
+					temp = temp / 10;
+
+					dec_value += last_digit * base;
+
+					base = base * 2;
+				}
+
+				return dec_value;
+			}
+
+
+			int main()
+			{
+				int num = 10101001;
+
+				cout << binaryToDecimal(num) << endl;
+			}
+
+	</code>
+	</pre>
+					<br><br>
+					<h1 style="font-size: 20px;color: green;">Sample Input</h1>
+					<h1 style="background-color: #cccccc; padding: 5px; text-decoration: none;">10101001</h1>
+					<h1 style="font-size: 20px;color: green;">Sample Output</h1>
+					<h1 style="background-color: #cccccc;padding: 5px;text-decoration: none;">169</h1>
+					<h1 style="font-size: 20px;color: green;">Time Complexity:</h1>
+					<h1 style="background-color: #cccccc; padding: 5px; text-decoration: none;font-size: 20px;">The
+						binary to decimal conversion algorithm is of complexity O(k),
+						i.e. the complexity of the loop.
+						where, k is a count of the number of digits in the binary representation of x,
+						that is log<sub>2</sub>x, thus this can also be treated as a algorithm of complexity O(log x)
+					</h1>
+					<h1 style="font-size: 20px;color: green;">Space Complexity:</h1>
+					<h1 style="background-color: #cccccc;padding: 5px;text-decoration: none;">O(1)</h1>
+				</div>
+			</section>
+		</div>
+	</div>
+	<footer class="footer">
+		<br>
+		<address>
+			<h2>Author: Rutuja Patil</h2>
+			<a class="content" href="mailto:hege@example.com">hege@example.com</a>
+			<br>Contact Us:<br>1515626238<br>
+			<br>
+		</address>
+
+
+
+	</footer>
+
+</body>
+
+</html>
